@@ -1,0 +1,73 @@
+name:                introductory-examples
+version:             0.2.0.0
+# github:              "githubuser/exercises"
+license:             LGPL-2.1
+author:              "Murat Özsöyler"
+maintainer:          "murat.ozsoyler@gmail.com"
+copyright:           "2018 Murat Özsöyler"
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+# Metadata used when publishing your package
+synopsis:            haskell-gi introductory program examples based on examples in GTK+ documents
+# category:            Web
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         Please see the README on Github at <https://github.com/githubuser/exercises#readme>
+
+source-dirs: 
+  - src
+  # - src/resource-bundle
+
+ghc-options:
+- -Wall
+- -fno-warn-unused-do-bind
+- -fwarn-incomplete-patterns
+- -fno-warn-name-shadowing
+- -fno-warn-unused-do-bind
+- -threaded
+- -with-rtsopts=-N
+
+extra-source-files:
+- src/builder.ui
+
+dependencies:
+- base >= 4.7 && < 5
+- text
+- filepath
+- gi-cairo
+- gi-gdk
+- gi-gdkpixbuf
+- gi-gio
+- gi-gtk
+- haskell-gi-base
+
+executables:
+  basic:
+    main:                basic.hs
+
+  hello-world:
+    main:                hello-world.hs
+
+  packed-widgets:
+    main:                packed-widgets.hs
+
+  builder:
+    main: builder.hs
+ 
+  search-bar:
+    main: search-bar.hs
+
+  action-namespace:
+    main: action-namespace.hs
+
+  resource-bundle:
+    source-dirs: src/resource-bundle
+    main: resource-bundle.hs
+    # External resource bundles Step 3: Comment out the 2 lines below
+    c-sources: src/resource-bundle/resources.c
+    pkg-config-dependencies: glib-2.0 >= 2.32

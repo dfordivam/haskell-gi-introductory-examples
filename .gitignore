@@ -1,0 +1,6 @@
+.stack-work/
+*.cabal
+*.ui~
+*.gresource
+config.yaml
+*.cabal
